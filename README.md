@@ -1,3 +1,5 @@
+python select inteprerter
+
 
 - openssl rand -hex 32 -> gera string em base64 com 64 caracteres hexadecimal 32 bits para apikey
 - poetry add fastapi fastapi-versioning uvicorn requests aiohttp sqlalchemy psycopg2-binary pytest alembic python-decouple httpx passlib python-jose python-multipart fastapi-pagination
