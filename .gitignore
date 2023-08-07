@@ -1,0 +1,10 @@
+# Virtual environment
+__pypackages__/
+venv/
+.poetry/
+
+# Environment variables
+.env
+.env.*
+
+# Auto-generate
