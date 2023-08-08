@@ -3,7 +3,6 @@ from fastapi.exceptions import HTTPException
 from app.db.models import Product as ProductModel
 from app.schemas.product import Product, ProductOutput
 from app.use_cases.product import ProductUseCases
-from fastapi_pagination import Page
 
 
 def test_add_product_use_case(db_session, categories_on_db):
@@ -93,27 +92,30 @@ def test_update_product_non_exist(db_session):
     with pytest.raises(HTTPException):
         use_case.delete_product(id=0)
 
-def test_list_products_use_case(db_session, products_on_db):
+def test_list_products(db_session, products_on_db):
     use_case = ProductUseCases(db_session)
 
-    page = use_case.list_products(page=1, size=2)
+    products = use_case.list_products()
 
-    assert len(page.items) == 2
-    assert type(page) == Page
-    assert page.total == 3
-    assert page.page == 1
-    assert page.size == 2
-    assert page.pages == 2
+    # por causa de bug do sqlalchemy quando damos um dict ele bagunça tudo, temos que dar um refresh
+    for product in products_on_db:
+        db_session.refresh(product)
 
-    assert page.items[0].id == products_on_db[0].id
-    assert page.items[1].id == products_on_db[1].id
+    assert len(products) == 3
+    assert type(products[0]) == ProductOutput
+    assert products[0].id == products_on_db[0].id
+    assert products[1].id == products_on_db[1].id
+    assert products[2].id == products_on_db[2].id
 
-def test_list_products_use_case_with_search(db_session, products_on_db):
+def test_list_products_with_search(db_session, products_on_db):
     use_case = ProductUseCases(db_session)
 
-    page = use_case.list_products(search='camisa')
+    products = use_case.list_products(search='cami')
 
-    assert len(page.items) == 2
-    assert type(page) == Page
-    assert page.items[0].id == products_on_db[0].id
-    assert page.items[1].id == products_on_db[1].id
+    for product in products_on_db:
+        db_session.refresh(product)
+
+    assert len(products) == 2
+    assert type(products[0]) == ProductOutput
+    assert products[0].id == products_on_db[0].id
+    assert products[1].id == products_on_db[1].id

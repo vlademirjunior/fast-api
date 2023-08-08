@@ -391,21 +391,6 @@ sqlmodel = ["sqlakeyset (>=2.0.1680321678,<3.0.0)", "sqlmodel (>=0.0.8,<0.0.9)"]
 tortoise = ["tortoise-orm (>=0.16.18,<0.20.0)"]
 
 [[package]]
-name = "fastapi-versioning"
-version = "0.10.0"
-description = "api versioning for fastapi web applications"
-optional = false
-python-versions = ">=3.6"
-files = [
-    {file = "fastapi_versioning-0.10.0-py3-none-any.whl", hash = "sha256:afe0ad7a56383b884c399341260bd3301b40e5a1cf9f6dc4211a349489087e1b"},
-    {file = "fastapi_versioning-0.10.0.tar.gz", hash = "sha256:5c18ea4e9ae1afd39c9e5bed1c240bf1cabdc75217579af78249ccb651c7b5b5"},
-]
-
-[package.dependencies]
-fastapi = ">=0.56.0"
-starlette = "*"
-
-[[package]]
 name = "frozenlist"
 version = "1.4.0"
 description = "A list-like structure which implements collections.abc.MutableSequence"
@@ -1397,4 +1382,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "c5f1cdcb523c652a3c4755cc432080d8eded25e43aa14b071b8abe958c425d33"
+content-hash = "ad787c15abd30ccc99e935d6ab407be6b3fbf6f88788540e2275ea28da790ca9"

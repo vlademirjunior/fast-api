@@ -5,8 +5,6 @@ from fastapi import status
 from app.db.models import Product as ProductModel
 from app.db.models import Category as CategoryModel
 from app.schemas.product import Product, ProductOutput
-from fastapi_pagination.ext.sqlalchemy import paginate
-from fastapi_pagination import Params
 
 class ProductUseCases:
     def __init__(self, db_session: Session):
@@ -51,17 +49,19 @@ class ProductUseCases:
         self.db_session.commit()
     
 
-    def list_products(self, page: int = 1, size: int = 10, search: str = ''):
+    def list_products(self, search: str = ''):
         products_on_db = self.db_session.query(ProductModel).filter(
             or_(
                 ProductModel.name.ilike(f'%{search}%'),
                 ProductModel.slug.ilike(f'%{search}%')
             )
-        )
+        ).all()
+        products_output = [ #List Comprehension
+            self.serialize_product(product_model)
+            for product_model in products_on_db
+        ]
 
-        params = Params(page=page, size=size)
-        page = paginate(products_on_db, params=params)
-        return page
+        return products_output
 
     def serialize_product(self, product_model: ProductModel):
         product_dict = product_model.__dict__

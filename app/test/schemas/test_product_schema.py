@@ -1,6 +1,6 @@
 import pytest
 from app.schemas.product import Product, ProductInput, ProductOutput
-from app.schemas.category import CategoryOutput
+from app.schemas.category import Category
 
 
 def test_product_schema():
@@ -78,7 +78,7 @@ def test_product_input_schema():
 
 
 def test_product_output_schema():
-    category = CategoryOutput(id=1, name='Roupa', slug='roupa')
+    category = Category(name='Roupa', slug='roupa')
     product_output = ProductOutput(
         id=1,
         name='Camisa Mike',

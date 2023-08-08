@@ -1,5 +1,3 @@
-python select inteprerter
-
 
 - openssl rand -hex 32 -> gera string em base64 com 64 caracteres hexadecimal 32 bits para apikey
 - poetry add fastapi fastapi-versioning uvicorn requests aiohttp sqlalchemy psycopg2-binary pytest alembic python-decouple httpx passlib python-jose python-multipart fastapi-pagination
@@ -24,11 +22,11 @@ python select inteprerter
 
 - todos os comandos agora sao dentro do container exceto instalacao de bibliotecas, instalar fora do container.
 - docker-compose run --user 1000 app sh -c 'alembic init migrations' no linux
-- docker-compose run --user 1000 app sh -c 'alembic init migrations' no mac (id -u no terminal) 
-- docker-compose run --user 1000 app sh -c 'alembic revision --autogenerate -m "add categories table"'  -> gera migration script file mas nao executa/persiste no banco,é apenas a revisao
-- docker-compose run --user 1000 app sh -c 'alembic upgrade head'  -> executa persistindo no banco
-- docker-compose run --user 1000 app sh -c 'pytest'
-- docker-compose run --user 1000 app sh -c 'pytest -k test_add_category_use_case'  -> teste especifico
+- docker-compose run --user 501 app sh -c 'alembic init migrations' no mac (id -u no terminal) 
+- docker-compose run --user 501 app sh -c 'alembic revision --autogenerate -m "add categories table"'  -> gera migration script file mas nao executa/persiste no banco,é apenas a revisao
+- docker-compose run --user 501 app sh -c 'alembic upgrade head'  -> executa persistindo no banco
+- docker-compose run --user 501 app sh -c 'pytest'
+- docker-compose run --user 501 app sh -c 'pytest -k test_add_category_use_case'  -> teste especifico
 
 
 # sempre que der erro: no module named 'xxxxxxx' precisamos instalar com poetry
