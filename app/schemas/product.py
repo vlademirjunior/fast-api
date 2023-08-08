@@ -1,7 +1,7 @@
 import re
 from pydantic import field_validator
 from app.schemas.custom_base_model import CustomBaseModel
-from app.schemas.category import Category
+from app.schemas.category import CategoryOutput
 
 class Product(CustomBaseModel):
     name: str
@@ -34,4 +34,7 @@ class ProductInput(CustomBaseModel):
 
 class ProductOutput(Product):
     id: int
-    category: Category
+    category: CategoryOutput
+
+    class Config: # Para paginação, mesma coisa que o serialize_category faz, diferenca que o serialize_category te dar mais poder
+        orm_mode = True
