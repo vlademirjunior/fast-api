@@ -96,14 +96,21 @@ def test_delete_product_route_invalid_id():
 
 
 def test_list_products_route(products_on_db):
-    response = client.get('/product/list')
+    response = client.get('/product/list?page=1&size=2')
 
     assert response.status_code == status.HTTP_200_OK
     data = response.json()
 
-    assert len(data) == 3
-    assert data[0] == {'name': products_on_db[0].name, 'slug': products_on_db[0].slug, 'price': products_on_db[0].price, 'stock': products_on_db[0].stock,
-                       'id': products_on_db[0].id, 'category': {'name': products_on_db[0].category.name, 'slug': products_on_db[0].category.slug}}
+    assert 'items' in data
+    assert len(data['items']) == 2
+
+    assert data['items'][0] == {'name': products_on_db[0].name, 'slug': products_on_db[0].slug, 'price': products_on_db[0].price, 'stock': products_on_db[0].stock,
+                       'id': products_on_db[0].id, 'category': {'id': products_on_db[0].category.id, 'name': products_on_db[0].category.name, 'slug': products_on_db[0].category.slug}}
+
+    assert data['total'] == 3
+    assert data['page'] == 1
+    assert data['size'] == 2
+    assert data['pages'] == 2
 
 def test_list_products_route_with_search(products_on_db):
     response = client.get('/product/list?search=cami')
@@ -111,6 +118,10 @@ def test_list_products_route_with_search(products_on_db):
     assert response.status_code == status.HTTP_200_OK
     data = response.json()
     
-    assert len(data) == 2
-    assert data[0] == {'name': products_on_db[0].name, 'slug': products_on_db[0].slug, 'price': products_on_db[0].price, 'stock': products_on_db[0].stock,
-                       'id': products_on_db[0].id, 'category': {'name': products_on_db[0].category.name, 'slug': products_on_db[0].category.slug}}
+    assert len(data['items']) == 2
+    assert data['items'][0] == {'name': products_on_db[0].name, 'slug': products_on_db[0].slug, 'price': products_on_db[0].price, 'stock': products_on_db[0].stock,
+                       'id': products_on_db[0].id, 'category': {'id': products_on_db[0].category.id, 'name': products_on_db[0].category.name, 'slug': products_on_db[0].category.slug}}
+    assert data['total'] == 2
+    assert data['page'] == 1
+    assert data['size'] == 10
+    assert data['pages'] == 1

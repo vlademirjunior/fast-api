@@ -1,9 +1,10 @@
 from typing import List
-from fastapi import APIRouter, Response, Depends, status
+from fastapi import APIRouter, Response, Depends, status, Query
 from sqlalchemy.orm import Session
 from app.routes.deps import get_db_session, auth
 from app.use_cases.product import ProductUseCases
 from app.schemas.product import Product, ProductInput, ProductOutput
+from fastapi_pagination import Page
 
 router = APIRouter(prefix='/product', tags=['Produtos da minha loja'], dependencies=[Depends(auth)])
 
@@ -33,9 +34,11 @@ def delete_product(id: int, db_session: Session = Depends(get_db_session)):
     return Response(status_code=status.HTTP_204_NO_CONTENT)
 
 
-@router.get('/list', response_model=List[ProductOutput], description="Lista os produtos")
+@router.get('/list', response_model=Page[ProductOutput], description="Lista os produtos")
 def list_products(
+    page: int = Query(1, ge=1, description='Numero da pagina'),
+    size: int = Query(10, ge=1, le=50, description='Tamanho da pagina'),
     search: str = '',
     db_session: Session = Depends(get_db_session)):
     use_case = ProductUseCases(db_session)
-    return use_case.list_products(search)
+    return use_case.list_products(page=page, size=size, search=search)
