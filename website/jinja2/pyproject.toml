@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "fastapi-jinja2"
+version = "0.1.0"
+description = "FastAPI com Jinja2 Templates"
+authors = ["Vlademir Junior <vlademirjunior@protonmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.103.0"
+uvicorn = "^0.23.2"
+jinja2 = "^3.1.2"
+python-multipart = "^0.0.6"
+aiofile = "^3.8.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

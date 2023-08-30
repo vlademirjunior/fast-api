@@ -1,0 +1,160 @@
+{% extends '_base.html' %}
+{% block cover %}
+<!-- Inicio page start-->
+<section id="cover" class="container">
+    <div class="row g-2 justify-content-around">
+        <div class="col-md-6 d-flex justify-content-center align-items center order-lg-2">
+            <div class="p-3">
+                <img src="{{ url_for('static', path='images/box.png') }}" alt="" class="mx-auto d-block rounded w-100 img-fluid">
+            </div>
+        </div>
+        <div class="col-md-6 d-flex justify-content-center align-items center order-lg-2">
+            <div class="p-3">
+                <h1 class="custom-highlight">LUXÚRIA PREMIUM</h1>
+                <h2>Transforme suas noites comuns em momentos extraordinários.</h2>
+                <p>
+                    O Plano "Luxúria Premium" é a sua caixa de surpresas mensal para explorar o mundo do prazer,
+                    intimidade e autoconhecimento. Perfeito para casais e solteiros, nossos produtos cuidadosamente
+                    selecionados irão elevar suas experiências, tornando cada momento uma aventura sedutora.
+                </p>
+                <a href="/assinatura" class="btn btn-primary rounded-3 custom-btn no-hover"><i class="fas fa-plus"> SAIBA
+                    MAIS</i></a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Inicio page end  -->
+{% endblock %}
+{% block container %}
+<section id="services" class="mt-2">
+    <div class="row g-2 justify-content-around">
+        <div class="col-md-6 d-flex justify-content-center align-items-center order-1">
+            <div class="col">
+                <div class="card p-3 mb-3 custom-services-card" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4 gy-3">
+                            <img src="{{ url_for('static', path='images/entrega.png') }}" alt="Serviço Entrega"
+                                class="mx-auto d-block custom-img-width">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body custom-text">
+                                <h4 class="card-title">Entrega Discreta & Rápida</h4>
+                                <p class="card-text">A privacidade e o conforto são nossas prioridades. Nossas
+                                    caixas são entregues em embalagens discretas, diretamente na sua porta, com
+                                    rapidez e eficiência.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card p-3 custom-services-card" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4 gy-3">
+                            <img src="{{ url_for('static', path='images/suporte.png') }}" alt="Serviço Suporte"
+                                class="mx-auto d-block custom-img-width">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body custom-text">
+                                <h4 class="card-title">Suporte via Whatsapp</h4>
+                                <p class="card-text">Não paramos de cuidar de você após a sua assinatura. Nosso
+                                    suporte está sempre à disposição para resolver quaisquer questões ou dúvidas que
+                                    você possa ter sobre os produtos ou sua utilização. Estamos aqui para garantir
+                                    que sua experiência seja nada menos que excepcional, do início ao fim.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col order-lg-2">
+            <img src="{{ url_for('static', path='images/servicos-banner.png') }}" alt="Whatsapp" class="mx-auto d-block w-100">
+        </div>
+    </div>
+</section>
+
+<!-- Planos -->
+<section id="plans" class="mt-2">
+    <h2>Planos</h2>
+    <div class="row row-cols-1 rows-cols-md-3 g-4">
+        <div class="col-md-4">
+            <div class="card h-100 shadow custom-card">
+                <img src="{{ url_for('static', path='images/aurora.png') }}" alt="" class="card-img-top w-100 custom-bg">
+                <div class="card-body">
+                    <h4 class="card-title">Aurora Sensual</h4>
+                    <p class="card-text">O primeiro passo para uma vida amorosa mais excitante e gratificante. Inicie
+                        sua jornada com produtos cuidadosamente selecionados para iluminar seus momentos íntimos.</p>
+                </div>
+                <div class="card-footer custom-footer">
+                    <div class="float-start">
+                        <h4 class="custom-highlight">R$99,99</h4>
+                    </div>
+                    <div class="float-end">
+                        <button class="btn btn-primary rounded-3 custom-btn"><i class="fas fa-plus"> SAIBA
+                                MAIS</i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow custom-card">
+                <img src="{{ url_for('static', path='images/aurora.png') }}" alt="" class="card-img-top w-100 custom-bg">
+                <div class="card-body">
+                    <h4 class="card-title">Aurora Sensual</h4>
+                    <p class="card-text">O primeiro passo para uma vida amorosa mais excitante e gratificante. Inicie
+                        sua jornada com produtos cuidadosamente selecionados para iluminar seus momentos íntimos.</p>
+                </div>
+                <div class="card-footer custom-footer">
+                    <div class="float-start">
+                        <h4 class="custom-highlight">R$99,99</h4>
+                    </div>
+                    <div class="float-end">
+                        <button class="btn btn-primary rounded-3 custom-btn"><i class="fas fa-plus"> SAIBA
+                                MAIS</i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow custom-card">
+                <img src="{{ url_for('static', path='images/aurora.png') }}" alt="" class="card-img-top w-100 custom-bg">
+                <div class="card-body">
+                    <h4 class="card-title">Aurora Sensual</h4>
+                    <p class="card-text">O primeiro passo para uma vida amorosa mais excitante e gratificante. Inicie
+                        sua jornada com produtos cuidadosamente selecionados para iluminar seus momentos íntimos.</p>
+                </div>
+                <div class="card-footer custom-footer">
+                    <div class="float-start">
+                        <h4 class="custom-highlight">R$99,99</h4>
+                    </div>
+                    <div class="float-end">
+                        <button class="btn btn-primary rounded-3 custom-btn"><i class="fas fa-plus"> SAIBA
+                                MAIS</i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- contato -->
+<section id="contact" class="mt-5 mb-5">
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-md-12">
+            <div class="card custom-card">
+                <div class="text-center">
+                    <h4 class="d-block mt-3 text-uppercase">Inscreva-se em nossa Newsletter!</h4>
+                    <div class="m-5">
+                        <form action="/newsletter" method="post">
+                            <div class="input-group mt-4 mb-3">
+                                <input type="email" name="email" id="email" placeholder="Email" class="form-control" required>
+                                <button class="btn btn-success border-rad custom-btn" type="submit"
+                                    id="button-addon2">Inscrever</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Fim contato -->
+{% endblock %}
