@@ -9,6 +9,10 @@ div {
     display: block;
 }
 
+.red-color {
+    color: #D32F2F;
+}
+
 h1 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 80px;

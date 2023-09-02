@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clube SexShop | Na Caixa</title>
-
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', path='images/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', path='images/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', path='images/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', path='images/site.webmanifest') }}">
     <!----google font---->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <!----font awesome---->
@@ -25,7 +28,7 @@
         <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow custom-navbar">
             <div class="container container-fluid">
                 <div class="navbar-header">
-                    <a href="#" class="navbar-brand float-end ml-10i">
+                    <a href="/" class="navbar-brand float-end ml-10i">
                         <img src="{{ url_for('static', path='images/logo.png') }}" alt="Clube SexShop" class="img-responsive custom-logo">
                         <span class="custom-highlight ml-10i">CLUBE SEXBOX</span>
                     </a>
@@ -37,16 +40,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="nav navbar-nav ms-auto custom-ul rounded">
                         <li class="nav-item custom-li">
-                            <a href="#" aria-current="page" class="nav-link active">Início</a>
-                        </li>
-                        <li class="nav-item custom-li">
-                            <a href="#services" class="nav-link">Serviços</a>
+                            <a href="/" aria-current="page" class="nav-link active">Início</a>
                         </li>
                         <li class="nav-item custom-li">
                             <a href="#plans" class="nav-link">Planos</a>
                         </li>
                         <li class="nav-item custom-li">
-                            <a href="#contact" class="nav-link">Contato</a>
+                            <a href="#contact" class="nav-link">Newsletter</a>
                         </li>
                     </ul>
                 </div>
@@ -70,9 +70,9 @@
                             <li>
                                 <a href="#" class="text-dark">Suporte</a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="#" class="text-dark">Consultoria Online</a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0">

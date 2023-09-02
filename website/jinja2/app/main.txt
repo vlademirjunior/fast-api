@@ -1,0 +1,84 @@
+from fastapi import FastAPI, Request, status, UploadFile
+from fastapi.templating import Jinja2Templates
+from datetime import datetime, timedelta, timezone
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import RedirectResponse
+from pathlib import Path
+from aiofile import async_open
+from uuid import uuid4
+from tinydb import TinyDB, Query
+import re
+
+app = FastAPI()
+templates = Jinja2Templates(directory='templates')
+app.mount('/static', StaticFiles(directory='static'), name='static')
+app.mount('/media', StaticFiles(directory='media'), name='media')
+# o Path informa que o diretório está no mesmo diretório que o atual = main.
+media = Path('media')
+
+
+@app.get('/')
+async def index(request: Request, usuario: str = 'Vlademir Santos'):
+    diferenca = timedelta(hours=-3)  # utc-3
+    fuso_horario = timezone(diferenca)
+    data_atual = datetime.now(tz=fuso_horario)
+    context = {
+        'request': request,
+        'data_atual': data_atual,
+        'usuario': usuario
+    }
+
+    return templates.TemplateResponse('index.html', context=context)
+
+
+@app.get('/assinatura/{assinatura:str}')
+async def assinatura(request: Request, assinatura: str):
+    return templates.TemplateResponse(f'assinatura-{assinatura}.html', context={
+        'request': request
+    })
+
+@app.post('/newsletter')
+async def newsletter(request: Request):
+    form = await request.form()
+    email: str = form.get('email')
+    # Make a regular expression
+    # for validating an Email
+    regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
+    
+    # and the string into the fullmatch() method
+    if(re.fullmatch(regex, email)):
+        db = TinyDB('newsletter.json')
+        Newsletter = Query()
+        total_encontrado = db.search(Newsletter.email == email)
+        if (len(total_encontrado) == 0):
+            db.insert({'email': email})
+ 
+    return RedirectResponse(str(request.url_for('index')) + '#contact', status_code=status.HTTP_303_SEE_OTHER)
+
+
+@app.post('/upload')
+async def upload(request: Request):
+    form = await request.form()
+    email: str = form.get('email')
+    arquivo: UploadFile = form.get('arquivo')
+    print(f"Nome do arquivo: {arquivo.filename}")
+    print(f"Tipo do arquivo: {arquivo.content_type}")
+
+    print(f"Cliente quer se cadastrar na newsletter: {email}")
+
+    arquivo_ext: str = arquivo.filename.split('.')[1]
+    # evitar override do arquivo
+    novo_nome: str = f"{str(uuid4())}.{arquivo_ext}"
+
+    # a de async w de write e b de binary
+    async with async_open(f"{media}/{novo_nome}", "wb") as afile:
+        # file é um binary que é o content
+        await afile.write(arquivo.file.read())
+
+    # obs.: por padrão os arquivos carregados nao ficam disponiveis para uso, para deixar para uso temos que
+    # configurar da mesma forma que foi feito com static.
+    context = {
+        'request': request,
+        'imagem': novo_nome,
+    }
+    return templates.TemplateResponse('assinatura.html', context=context)

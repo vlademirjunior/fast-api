@@ -1,0 +1,192 @@
+{% extends '_base.html' %}
+
+{% block cover %}
+<!-- Inicio page start-->
+<section id="cover" class="container">
+    <div class="row g-2 justify-content-around">
+        <div class="col-md-12 d-flex justify-content-center align-items center order-lg-2">
+            <div class="p-3">
+                <h1 class="custom-highlight">PERSONALIZE <span class="red-color">ÊXTASE</span></h1>
+                <p>Você é único e suas necessidades também. Se você não se conforma com o comum e tem gostos específicos, este plano foi feito sob medida para você.</p>
+                <p>Escolha até <span class="red-color">10 itens</span> de um catálogo especializado, que inclui desde brinquedos eróticos de alta qualidade, lubrificantes, brindes e até joguinhos provocantes. A palavra final é sua.</p>
+                <p>Catálogo:</p>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Quantidade</th>
+                        <th scope="col">Item</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Anéis Peniano</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Excitante Feminino</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Excitante Masculino</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Excitante Unissex</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">6</th>
+                        <td>Bolinhas Explosivas</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Jogo de Dados (Kama Sutra)</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Preservativos de Luxo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Caneta de Sexo Oral</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Tatuagem Íntima (Aleatória)</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Lubrificantes (Aleatórios)</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">5</th>
+                        <td>Raspadinhas Jogo Erótico (Aleatórias)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                <p>Benefícios:</p>
+                <ul>
+                    <li>Total Controle: Você decide o que entra na sua caixa.</li>
+                    <li class="red-color fw-bold">Discrição: Seus produtos chegam em uma embalagem discreta, mantendo sua privacidade intacta.</li>
+                    <li>Descoberta e Diversão: Uma nova seleção de produtos todo mês, para que você nunca caia na rotina.</li>
+                    <li>Entrega Rápida e Gratuita: Não se preocupe com taxas adicionais, a entrega é por nossa conta. <span>(APENAS PARA O RIO DE JANEIRO)</span></li>
+                    <li>Suporte e Consultoria: Suporte sempre à disposição para resolver quaisquer questões ou dúvidas que você possa ter sobre os produtos ou sua utilização.</li>
+                </ul>
+                <p>Vantagens de Assinar:</p>
+                <ul>
+                    <li>Comodidade: Receba produtos selecionados sem sair de casa.</li>
+                    <li class="red-color fw-bold">Sem Surpresas Desagradáveis: Ao escolher exatamente o que você quer, você sabe que vai adorar cada item da sua caixa.</li>
+                    <li class="red-color fw-bold">Economia: O preço de cada caixa é muito inferior ao preço que você pagaria em cada item individualmente.</li>
+                    <li class="red-color fw-bold">Exclusividade: Acesso a lançamentos e itens exclusivos antes de chegarem ao mercado.</li>
+                    <li class="red-color fw-bold">Flexibilidade Máxima: Mude seus produtos e Cancele quando quiser.</li>
+                </ul>
+                <h4>Se você quer uma experiência de prazer que seja tão singular quanto você, o "Personalize o Êxtase" é o plano que você estava esperando. Assine hoje e tome as rédeas do seu próprio prazer.</h4>
+                <h5 class="text-decoration-line-through custom-highlight">R$199,99</h4>
+                    <h4 class="red-color">R$169,99</h4>
+                    <a href="/assinatura/personalize-extase" class="btn btn-primary rounded-3 custom-btn no-hover">QUERO ASSINAR</a>
+            </div>
+        </div>
+        <div class="col-md-12 d-flex justify-content-center align-items center order-lg-2">
+            <div class="p-3">
+                <img src="{{ url_for('static', path='images/box-10.png') }}" alt=""
+                    class="mx-auto d-block rounded w-100 img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Inicio page end  -->
+<!-- Planos -->
+<section id="plans" class="mt-2">
+    <h2>Outros Planos</h2>
+    <div class="row row-cols-1 rows-cols-md-3 g-4">
+        <div class="col-md-4">
+            <div class="card h-100 shadow custom-card">
+                <img src="{{ url_for('static', path='images/box-40.png') }}" alt=""
+                    class="card-img-top w-100 custom-bg">
+                <div class="card-body">
+                    <h4 class="card-title">Luxúria Premium</h4>
+                    <p class="card-text">Transforme suas noites comuns em momentos extraordinários.</p>
+                </div>
+                <div class="card-footer custom-footer">
+                    <div class="float-start">
+                        <h5 class="text-decoration-line-through custom-highlight">R$169,99</h4>
+                            <h4 class="text-danger">R$99,99</h4>
+                    </div>
+                    <div class="float-end">
+                        <a href="/assinatura/luxuria-premium" class="btn btn-primary rounded-3 custom-btn no-hover"><i
+                            class="fas fa-plus"> SAIBA
+                            MAIS</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow custom-card">
+                <img src="{{ url_for('static', path='images/box-10.png') }}" alt=""
+                    class="card-img-top w-100 custom-bg">
+                <div class="card-body">
+                    <h4 class="card-title">Aurora Sensual</h4>
+                    <p class="card-text">O primeiro passo para uma vida amorosa mais excitante e gratificante. Inicie
+                        sua jornada com produtos cuidadosamente selecionados para iluminar seus momentos íntimos.</p>
+                </div>
+                <div class="card-footer custom-footer">
+                    <div class="float-start">
+                        <h5 class="text-decoration-line-through custom-highlight">R$69,99</h4>
+                            <h4 class="text-danger">R$29,99</h4>
+                    </div>
+                    <div class="float-end">
+                        <a href="/assinatura/aurora-sensual" class="btn btn-primary rounded-3 custom-btn no-hover"><i
+                            class="fas fa-plus"> SAIBA
+                            MAIS</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow custom-card">
+                <img src="{{ url_for('static', path='images/box-20.png') }}" alt=""
+                    class="card-img-top w-100 custom-bg">
+                <div class="card-body">
+                    <h4 class="card-title">Olimpo Sensual</h4>
+                    <p class="card-text">Desfrute do ápice da intimidade com produtos que vão muito além do padrão. Não
+                        é só sobre prazer; é sobre alcançar novas altitudes.</p>
+                </div>
+                <div class="card-footer custom-footer">
+                    <div class="float-start">
+                        <h5 class="text-decoration-line-through custom-highlight">R$99,99</h4>
+                            <h4 class="text-danger">R$69,99</h4>
+                    </div>
+                    <div class="float-end">
+                        <a href="/assinatura/olimpo-sensual" class="btn btn-primary rounded-3 custom-btn no-hover"><i
+                            class="fas fa-plus"> SAIBA
+                            MAIS</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- contato -->
+<section id="contact" class="mt-5 mb-5">
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-md-12">
+            <div class="card custom-card">
+                <div class="text-center">
+                    <h4 class="d-block mt-3 text-uppercase">Inscreva-se em nossa Newsletter!</h4>
+                    <div class="m-5">
+                        <form action="/newsletter" method="post">
+                            <div class="input-group mt-4 mb-3">
+                                <input type="email" name="email" id="email" placeholder="Email" class="form-control"
+                                    required>
+                                <button class="btn btn-success border-rad custom-btn" type="submit"
+                                    id="button-addon2">Inscrever</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Fim contato -->
+{% endblock %}

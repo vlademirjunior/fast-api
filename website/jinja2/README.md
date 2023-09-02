@@ -77,7 +77,7 @@ Ex.:
 
 
 - Adicionar dependencias
-`poetry add fastapi uvicorn Jinja2 python-multipart aiofile`
+`poetry add fastapi uvicorn Jinja2 python-multipart aiofile python-decouple`
 
 
 ### Imagens free

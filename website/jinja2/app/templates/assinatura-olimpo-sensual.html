@@ -1,0 +1,138 @@
+{% extends '_base.html' %}
+
+{% block cover %}
+<!-- Inicio page start-->
+<section id="cover" class="container">
+    <div class="row g-2 justify-content-around">
+        <div class="col-md-12 d-flex justify-content-center align-items center order-lg-2">
+            <div class="p-3">
+                <h1 class="custom-highlight">OLIMPO <span class="red-color">SENSUAL</span></h1>
+                <p>
+                    Para os conhecedores do prazer, aqueles que buscam uma jornada de descoberta além do básico. Este plano é para você se a sua meta é explorar, experimentar e alcançar novas alturas na arte do prazer.
+                </p>
+                <p>Este plano exclusivo contém uma variedade de <span class="red-color">20 itens</span> como lubrificante de qualidade, preservativos de luxo, pequenos brinquedos para iniciantes e joguinho para maximizar seu prazer.</p>
+                <p>Benefícios:</p>
+                <ul>
+                    <li>Experiência Elevada: Cada caixa é uma aventura de prazer aguardando para ser descoberta.</li>
+                    <li class="red-color fw-bold">Discrição: Seus produtos chegam em uma embalagem discreta, mantendo sua privacidade intacta.</li>
+                    <li>Descoberta e Diversão: Uma nova seleção de produtos todo mês, para que você nunca caia na rotina.</li>
+                    <li>Entrega Rápida e Gratuita: Não se preocupe com taxas adicionais, a entrega é por nossa conta. <span>(APENAS PARA O RIO DE JANEIRO)</span></li>
+                    <li>Suporte e Consultoria: Suporte sempre à disposição para resolver quaisquer questões ou dúvidas que você possa ter sobre os produtos ou sua utilização.</li>
+                </ul>
+                <p>Vantagens de Assinar:</p>
+                <ul>
+                    <li>Comodidade: Receba produtos selecionados sem sair de casa.</li>
+                    <li class="red-color fw-bold">Economia: O preço de cada caixa é muito inferior ao preço que você pagaria em cada item individualmente.</li>
+                    <li class="red-color fw-bold">Exclusividade: Acesso a lançamentos e itens exclusivos antes de chegarem ao mercado.</li>
+                    <li class="red-color fw-bold">Flexibilidade: Cancele quando quiser.</li>
+                </ul>
+                <h4>Dê o passo decisivo e atreva-se a explorar territórios inexplorados de desejo e prazer. O "Olimpo Sensual" é sua entrada para uma vida íntima mais rica e gratificante. Assine agora.</h4>
+                <h5 class="text-decoration-line-through custom-highlight">R$99,99</h4>
+                    <h4 class="red-color">R$69,99</h4>
+                    <a href="/assinatura/olimpo-sensual" class="btn btn-primary rounded-3 custom-btn no-hover">QUERO ASSINAR</a>
+            </div>
+        </div>
+        <div class="col-md-12 d-flex justify-content-center align-items center order-lg-2">
+            <div class="p-3">
+                <img src="{{ url_for('static', path='images/box-20.png') }}" alt=""
+                    class="mx-auto d-block rounded w-100 img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Inicio page end  -->
+<!-- Planos -->
+<section id="plans" class="mt-2">
+    <h2>Outros Planos</h2>
+    <div class="row row-cols-1 rows-cols-md-3 g-4">
+        <div class="col-md-4">
+            <div class="card h-100 shadow custom-card">
+                <img src="{{ url_for('static', path='images/box-40.png') }}" alt=""
+                    class="card-img-top w-100 custom-bg">
+                <div class="card-body">
+                    <h4 class="card-title">Luxúria Premium</h4>
+                    <p class="card-text">Transforme suas noites comuns em momentos extraordinários.</p>
+                </div>
+                <div class="card-footer custom-footer">
+                    <div class="float-start">
+                        <h5 class="text-decoration-line-through custom-highlight">R$169,99</h4>
+                            <h4 class="text-danger">R$99,99</h4>
+                    </div>
+                    <div class="float-end">
+                        <a href="/assinatura/luxuria-premium" class="btn btn-primary rounded-3 custom-btn no-hover"><i
+                            class="fas fa-plus"> SAIBA
+                            MAIS</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow custom-card">
+                <img src="{{ url_for('static', path='images/box-10.png') }}" alt=""
+                    class="card-img-top w-100 custom-bg">
+                <div class="card-body">
+                    <h4 class="card-title">Aurora Sensual</h4>
+                    <p class="card-text">O primeiro passo para uma vida amorosa mais excitante e gratificante. Inicie
+                        sua jornada com produtos cuidadosamente selecionados para iluminar seus momentos íntimos.</p>
+                </div>
+                <div class="card-footer custom-footer">
+                    <div class="float-start">
+                        <h5 class="text-decoration-line-through custom-highlight">R$69,99</h4>
+                            <h4 class="text-danger">R$29,99</h4>
+                    </div>
+                    <div class="float-end">
+                        <a href="/assinatura/aurora-sensual" class="btn btn-primary rounded-3 custom-btn no-hover"><i
+                            class="fas fa-plus"> SAIBA
+                            MAIS</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow custom-card">
+                <img src="{{ url_for('static', path='images/box-10.png') }}" alt=""
+                    class="card-img-top w-100 custom-bg">
+                <div class="card-body">
+                    <h4 class="card-title">Personalize o Éxtase</h4>
+                    <p class="card-text">Um mundo de prazer sob medida, projetado exclusivamente para você. Porque você
+                        é único, e seu prazer também deve ser.</p>
+                </div>
+                <div class="card-footer custom-footer">
+                    <div class="float-start">
+                        <h5 class="text-decoration-line-through custom-highlight">R$199,99</h4>
+                            <h4 class="text-danger">R$169,99</h4>
+                    </div>
+                    <div class="float-end">
+                        <a href="/assinatura/personalize-extase" class="btn btn-primary rounded-3 custom-btn no-hover"><i
+                            class="fas fa-plus"> SAIBA
+                            MAIS</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- contato -->
+<section id="contact" class="mt-5 mb-5">
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-md-12">
+            <div class="card custom-card">
+                <div class="text-center">
+                    <h4 class="d-block mt-3 text-uppercase">Inscreva-se em nossa Newsletter!</h4>
+                    <div class="m-5">
+                        <form action="/newsletter" method="post">
+                            <div class="input-group mt-4 mb-3">
+                                <input type="email" name="email" id="email" placeholder="Email" class="form-control"
+                                    required>
+                                <button class="btn btn-success border-rad custom-btn" type="submit"
+                                    id="button-addon2">Inscrever</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Fim contato -->
+{% endblock %}
